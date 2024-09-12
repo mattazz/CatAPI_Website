@@ -40,7 +40,20 @@ button:hover{
 #breed-message{
     text-align: center;
 }
+#test-search-container{
+    border: 1px solid white;
+    border-radius: 20px;
+    padding: 20px;
+    text-align: center;
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#test-search-container > input{
+    width: 60vw;
 
+}
 #breed-list{
     text-align: center;
     display: flex;
@@ -50,4 +63,17 @@ button:hover{
     align-items: center;
     margin: auto;
     width: 80vw;
+}
+
+#search-results{
+    width: 80vw;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 20px;
 }
