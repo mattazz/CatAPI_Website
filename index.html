@@ -39,13 +39,15 @@
                 <input type="radio" name="weight-type" id="imperial" value="imperial">
                 <label for="metric">Metric</label>
                 <input type="radio" name="weight-type" id="metric" value="metric">
-                <button id="filter-weight">Weight</button>
+                <button id="filter-weight" onclick="GetWeightListFilter()">Weight</button>
             </div>
         </div>
 
         <div class="container">
             <div id="flex">
-                <button id="filter-intelligence-friendly">Intelligence - Friendly</button>
+                <button id="filter-intelligence-friendly" onclick="GetChildFriendly()">Intelligence - Friendly</button>
+                <button id="average-intelligence" onclick="GetAverageIntelligence()">Average Intelligence</button>
+                <button id="average-intelligence-childInt4" onclick="GetAverageIntelligenceFriendly4()">Average Intelligence for Child Friendly = 4</button>
             
             </div>
 
