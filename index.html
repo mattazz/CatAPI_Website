@@ -9,15 +9,47 @@
     </head>
 
     <body>
-        
-        <img class="img1" src="https://cdn.vox-cdn.com/thumbor/GYAFeG40W7xqBJvHZSpUzkA9aos=/0x0:1400x1400/1200x628/filters:focal(700x700:701x701):no_upscale()/cdn.vox-cdn.com/uploads/chorus_asset/file/22310826/poptart1redrainbowfix_1.gif" alt="" srcset="">
-        <img class="img2" src="https://cdn.vox-cdn.com/thumbor/GYAFeG40W7xqBJvHZSpUzkA9aos=/0x0:1400x1400/1200x628/filters:focal(700x700:701x701):no_upscale()/cdn.vox-cdn.com/uploads/chorus_asset/file/22310826/poptart1redrainbowfix_1.gif" alt="" srcset="">
+
+        <img class="img1"
+            src="https://cdn.vox-cdn.com/thumbor/GYAFeG40W7xqBJvHZSpUzkA9aos=/0x0:1400x1400/1200x628/filters:focal(700x700:701x701):no_upscale()/cdn.vox-cdn.com/uploads/chorus_asset/file/22310826/poptart1redrainbowfix_1.gif"
+            alt="" srcset="">
+        <img class="img2"
+            src="https://cdn.vox-cdn.com/thumbor/GYAFeG40W7xqBJvHZSpUzkA9aos=/0x0:1400x1400/1200x628/filters:focal(700x700:701x701):no_upscale()/cdn.vox-cdn.com/uploads/chorus_asset/file/22310826/poptart1redrainbowfix_1.gif"
+            alt="" srcset="">
         <h1 class="no-margin">🐱 The CAT API 🐱</h1>
         <p class="center no-margin">Matthew Azada</p>
-        <img class="img1" src="https://cdn.vox-cdn.com/thumbor/GYAFeG40W7xqBJvHZSpUzkA9aos=/0x0:1400x1400/1200x628/filters:focal(700x700:701x701):no_upscale()/cdn.vox-cdn.com/uploads/chorus_asset/file/22310826/poptart1redrainbowfix_1.gif" alt="" srcset="">
-        <img class="img2" src="https://cdn.vox-cdn.com/thumbor/GYAFeG40W7xqBJvHZSpUzkA9aos=/0x0:1400x1400/1200x628/filters:focal(700x700:701x701):no_upscale()/cdn.vox-cdn.com/uploads/chorus_asset/file/22310826/poptart1redrainbowfix_1.gif" alt="" srcset="">
+        <img class="img1"
+            src="https://cdn.vox-cdn.com/thumbor/GYAFeG40W7xqBJvHZSpUzkA9aos=/0x0:1400x1400/1200x628/filters:focal(700x700:701x701):no_upscale()/cdn.vox-cdn.com/uploads/chorus_asset/file/22310826/poptart1redrainbowfix_1.gif"
+            alt="" srcset="">
+        <img class="img2"
+            src="https://cdn.vox-cdn.com/thumbor/GYAFeG40W7xqBJvHZSpUzkA9aos=/0x0:1400x1400/1200x628/filters:focal(700x700:701x701):no_upscale()/cdn.vox-cdn.com/uploads/chorus_asset/file/22310826/poptart1redrainbowfix_1.gif"
+            alt="" srcset="">
 
         <button id="cat-api-button" onclick="GetCatBreed()">List All Breeds!</button>
+        <div class="container">
+            <div class="flex">
+                <button id="filter-health-issues" onclick="GetCatsHealthIssuesFilter()">Health Issues</button>
+                <input id="filter-input" type="text">
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="flex">
+                <label for="imperial">Imperial</label>
+                <input type="radio" name="weight-type" id="imperial" value="imperial">
+                <label for="metric">Metric</label>
+                <input type="radio" name="weight-type" id="metric" value="metric">
+                <button id="filter-weight">Weight</button>
+            </div>
+        </div>
+
+        <div class="container">
+            <div id="flex">
+                <button id="filter-intelligence-friendly">Intelligence - Friendly</button>
+            
+            </div>
+
+        </div>
 
         <div id="breed-message"></div>
         <div id="breed-list"></div>
@@ -38,7 +70,7 @@
         </div>
 
 
-    <script src="main.js"></script>
+        <script src="main.js"></script>
     </body>
 
 </html>

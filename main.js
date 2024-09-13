@@ -2,17 +2,16 @@
 const arr_colors = ['yellow', 'pink', 'lightgreen', 'lightyellow', 'lightpink', 'lightcoral', 'lightgoldenrodyellow', 'lightseagreen', 'lightsalmon', 'lightcyan', 'lightblue', 'lightsteelblue']
 const arr_emojis = ['🐱', '😸', '😹', '😺', '😻', '😼', '😽', '😾', '😿', '🙀']
 
+// Lists all breeds of cats
 function GetCatBreed() {
     const breedList = document.getElementById('breed-list')
     const breedMessage = document.getElementById('breed-message')
 
+    let numOfBreeds = 0
+
     breedList.innerText = ""
 
     breedMessage.textContent = "Loading..."
-
-    //fun colors
-    const arr_colors = ['yellow', 'pink', 'lightgreen', 'lightyellow', 'lightpink', 'lightcoral', 'lightgoldenrodyellow', 'lightseagreen', 'lightsalmon', 'lightcyan', 'lightblue', 'lightsteelblue']
-    const arr_emojis = ['🐱', '😸', '😹', '😺', '😻', '😼', '😽', '😾', '😿', '🙀']
 
     const url = "https://api.thecatapi.com/v1/breeds"
     fetch(url)
@@ -20,16 +19,13 @@ function GetCatBreed() {
         .then(data => {
 
             const message = document.createElement('h2')
-
             breedMessage.textContent = "" //clears loading
-
-            //displays message outside of the container
-            message.textContent = "Here's a list of all your breeds! Click on a breed to learn more."
             breedMessage.appendChild(message)
 
             //forEach loop to add new <p> for all cat breedds
             data.forEach(breed => {
                 console.log(breed.name);
+                numOfBreeds++
                 const ele = document.createElement('p');
                 const link = document.createElement('a')
 
@@ -44,11 +40,63 @@ function GetCatBreed() {
 
                 ele.appendChild(link)
                 breedList.appendChild(ele)
+
+                //displays message outside of the container
+                message.textContent = `We found ${numOfBreeds} breeds of cats! Click on a breed to learn more.`
+
             })
                 .catch(error => console.error("Error: " + error))
         })
 }
 
+function GetCatsHealthIssuesFilter() {
+    const breedList = document.getElementById('breed-list')
+    const breedMessage = document.getElementById('breed-message')
+    let numOfBreeds = 0;
+
+    const filterInput = document.getElementById('filter-input').value
+    const filterValue = Number(filterInput);
+    const resultArray = []
+
+    breedList.innerText = ""
+    breedMessage.innerText = ""
+
+    const message = document.createElement('h2')
+    breedMessage.textContent = "" //clears loading
+    breedMessage.appendChild(message)
+
+    fetch("https://api.thecatapi.com/v1/breeds")
+        .then(response => response.json())
+        .then(data => {
+            data.forEach(breed => {
+                if (breed.health_issues == filterValue) {
+                    numOfBreeds++
+                    resultArray.push(breed.name);
+
+                    //generating element with fancy stuff
+                    const ele = document.createElement('p');
+                    const link = document.createElement('a')
+                    const randomEmoji = arr_emojis[Math.floor(Math.random() * arr_emojis.length)]
+                    link.textContent = randomEmoji + " " + breed.name + " " + randomEmoji;
+                    const randomColor = arr_colors[Math.floor(Math.random() * arr_colors.length)]
+                    link.style.color = randomColor
+
+                    ele.appendChild(link)
+                    breedList.appendChild(ele)
+
+                    //displays message outside of the container
+                    message.textContent = `We found ${numOfBreeds} breeds of cats! Click on a breed to learn more.`
+
+                }
+
+
+            });
+        })
+        .catch(error => console.error("Error: " + error));
+
+
+
+}
 function SearchCatApi() {
     const url = "https://api.thecatapi.com/v1/breeds";
     const searchName = document.getElementById('input-cat').value;

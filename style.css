@@ -14,16 +14,22 @@ img{
     right: 0;
 }
 
+.border{
+    border: 1px solid white;
+    box-shadow: 10px 10px white;
+    border-radius: 10px;
+    padding: 20px;
+}
 h1{
     text-align: center;
 }
-
 button{
     display: block;
     margin: auto;
     padding: 10px;
     border-radius: 10px;
-    transition: 0.5s all
+    transition: 0.5s all;
+    
 }
 .center{
     text-align: center;
@@ -40,6 +46,21 @@ button:hover{
 #breed-message{
     text-align: center;
 }
+
+/* Parent container */
+.container {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    margin: 20px;
+}
+
+/* Flex element */
+.flex {
+    display: inline-flex;
+    align-items: center;
+    gap: 20px;
+}
+
 #test-search-container{
     border: 1px solid white;
     border-radius: 20px;
