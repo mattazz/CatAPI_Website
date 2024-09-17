@@ -76,7 +76,8 @@ function GetWeightListFilter() {
                 const breedName = breed.name;
 
                 if (!weight_arr.includes(weight.trim().replace(/\s+/g, ''))) {
-                    weight_arr.push(weight.trim().replace(/\s+/g, ''));
+                    // I keep getting duplicate ranges, this should solve it
+                    weight_arr.push(weight.trim().replace(/\s+/g, '')); 
 
                     //generating element with fancy stuff
                     const ele = document.createElement('p');
